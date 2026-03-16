@@ -1,64 +1,50 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import "../App.css";
 
-export default function Password({ unlock }) {
+export default function Password({ onUnlock }) {
 
-  const [password,setPassword] = useState("");
-  const [error,setError] = useState("");
-  const [explode,setExplode] = useState(false);
+const [password,setPassword] = useState("");
 
-  const correctPassword = "18/4/2018";
+const checkPassword = () => {
 
-  const handleLogin = () => {
+if(password === "18/4/2018"){
+onUnlock();
+}else{
+alert("Wrong password ❤️");
+}
 
-    if(password.trim() === correctPassword){
+};
 
-      setExplode(true);
+return(
 
-      setTimeout(()=>{
-        unlock();
-      },2000);
+<div
+className="password"
+style={{
+backgroundImage:`url(${process.env.PUBLIC_URL}/images/h3.jpg)`,
+backgroundSize:"cover",
+backgroundPosition:"center"
+}}
+>
 
-    }else{
-      setError("Wrong Password ❤️ Try Again");
-    }
+<div className="password-box">
 
-  }
+<h1>Enter Our Secret Password ❤️</h1>
 
-  return(
+<input
+type="password"
+placeholder="Enter password"
+value={password}
+onChange={(e)=>setPassword(e.target.value)}
+/>
 
-  <div className="password">
+<button onClick={checkPassword}>
+Unlock ❤️
+</button>
 
-    <h1>Enter Our Secret Password ❤️</h1>
+</div>
 
-    <p className="hint">
-    Hint: The day our love started ❤️
-    </p>
+</div>
 
-    <input
-    type="password"
-    placeholder="Enter Password"
-    value={password}
-    onChange={(e)=>setPassword(e.target.value)}
-    />
-
-    <button onClick={handleLogin}>
-    Enter
-    </button>
-
-    <p className="error">{error}</p>
-
-    {explode &&
-
-      <div className="heart-explosion">
-
-        ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️
-
-      </div>
-
-    }
-
-  </div>
-
-  )
+);
 
 }

@@ -1,29 +1,56 @@
-import {useEffect,useState} from "react"
+import { useEffect, useState } from "react";
+import "../App.css";
 
 export default function Counter(){
 
-const startDate = new Date("2016-01-01")
+const startDate = new Date("2017-04-10"); // apni love start date dal sakte ho
 
-const [days,setDays] = useState(0)
+const [days,setDays] = useState(0);
 
 useEffect(()=>{
 
-const now = new Date()
-const diff = now - startDate
+const today = new Date();
 
-setDays(Math.floor(diff/(1000*60*60*24)))
+const diff = today - startDate;
 
-},[])
+const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+let count = 0;
+
+const counter = setInterval(()=>{
+
+count++;
+
+setDays(count);
+
+if(count >= totalDays){
+clearInterval(counter);
+}
+
+},5);
+
+},[]);
 
 return(
 
-<div className="counter">
+<section className="counter">
 
-<h2>Together For</h2>
-<h1>{days} Days ❤️</h1>
+<div className="counter-hearts">
+❤️ ❤️ ❤️
+</div>
+
+<h2>Days Of Our Love</h2>
+
+<div className="counter-box">
+
+<span>{days}</span>
+
+<p>Days Together ❤️</p>
 
 </div>
 
-)
+</section>
+
+);
 
 }

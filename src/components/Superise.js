@@ -1,14 +1,18 @@
-import {useState} from "react"
+import { useState } from "react";
+import "../App.css";
 
 export default function Surprise(){
 
-const [show,setShow] = useState(false)
+const [show,setShow] = useState(false);
 
 return(
 
-<div className="surprise">
+<section className="surprise">
 
-<button onClick={()=>setShow(true)}>
+<button 
+className="surprise-btn"
+onClick={()=>setShow(true)}
+>
 Click For Surprise ❤️
 </button>
 
@@ -16,11 +20,22 @@ Click For Surprise ❤️
 
 <div className="proposal">
 
+<div className="proposal-card">
+
 <h1>Will You Stay With Me Forever ❤️</h1>
 
-<div className="fireworks">
+<p>
+तुम मेरी जिंदगी की सबसे खूबसूरत कहानी हो 🌹  
+और मैं चाहता हूँ कि ये कहानी हमेशा चलती रहे 💖
+</p>
 
-🎆 🎆 🎆
+<div className="proposal-hearts">
+❤️ 💖 💕 💗 💘
+</div>
+
+<div className="fireworks">
+🎆 🎆 🎆 🎆
+</div>
 
 </div>
 
@@ -28,7 +43,7 @@ Click For Surprise ❤️
 
 }
 
-</div>
+</section>
 
 )
 

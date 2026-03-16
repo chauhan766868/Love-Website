@@ -15,11 +15,11 @@ import "./App.css";
 
 function App() {
 
-const [unlocked,setUnlocked] = useState(false)
-const [introDone,setIntroDone] = useState(false)
+const [unlocked,setUnlocked] = useState(false);
+const [introDone,setIntroDone] = useState(false);
 
 if(!unlocked){
-  return <Password unlock={()=>setUnlocked(true)} />
+  return <Password onUnlock={()=>setUnlocked(true)} />
 }
 
 if(!introDone){

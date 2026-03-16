@@ -1,22 +1,58 @@
+import "../App.css";
+
 export default function Timeline(){
 
 return(
 
-<div className="timeline">
+<section className="timeline-section">
 
 <h2>Our Journey ⏳</h2>
 
-<ul>
+<div className="timeline">
 
-<li>3rd Class ❤️ First Time Saw You</li>
-<li>School Days 🌹 Secret Love</li>
-<li>Teenage 💕 Real Feelings</li>
-<li>Long Distance ✈ Still Together</li>
-<li>Forever ❤️ Our Future</li>
+<div className="timeline-item">
+<div className="timeline-icon">❤️</div>
+<div className="timeline-content">
+<h3>3rd Class</h3>
+<p>First Time I Saw You 🌹</p>
+</div>
+</div>
 
-</ul>
+<div className="timeline-item">
+<div className="timeline-icon">💖</div>
+<div className="timeline-content">
+<h3>School Days</h3>
+<p>Secret Love & Hidden Smiles 🌹</p>
+</div>
+</div>
+
+<div className="timeline-item">
+<div className="timeline-icon">💕</div>
+<div className="timeline-content">
+<h3>Teenage</h3>
+<p>When Feelings Became Real ❤️</p>
+</div>
+</div>
+
+<div className="timeline-item">
+<div className="timeline-icon">✈️</div>
+<div className="timeline-content">
+<h3>Long Distance</h3>
+<p>Still Together No Matter The Distance 💖</p>
+</div>
+</div>
+
+<div className="timeline-item">
+<div className="timeline-icon">💍</div>
+<div className="timeline-content">
+<h3>Forever</h3>
+<p>Our Beautiful Future Together ❤️</p>
+</div>
+</div>
 
 </div>
+
+</section>
 
 )
 
