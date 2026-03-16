@@ -1,38 +1,322 @@
-.App {
-  text-align: center;
+
+/* GLOBAL */
+
+body{
+margin:0;
+padding:0;
+font-family:Poppins,sans-serif;
+background:#020617;
+color:white;
+text-align:center;
+overflow-x:hidden;
+scroll-behavior:smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* PASSWORD PAGE */
+
+.password{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:url("../public/images/h1.jpg");
+background-size:cover;
+background-position:center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.password input{
+padding:12px;
+font-size:18px;
+border-radius:10px;
+border:none;
+margin-top:20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.password button{
+margin-top:15px;
+padding:12px 25px;
+background:#ff4d6d;
+border:none;
+color:white;
+border-radius:20px;
+cursor:pointer;
 }
 
-.App-link {
-  color: #61dafb;
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+background-size:cover;
+background-position:center;
+position:relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+}
+
+.hero h1,
+.hero p{
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:70px;
+color:#ff4d6d;
+}
+
+/* STORY */
+
+.story{
+padding:80px;
+max-width:900px;
+margin:auto;
+line-height:1.8;
+font-size:20px;
+background:url("../public/images/h3.jpg");
+background-size:cover;
+background-position:center;
+border-radius:20px;
+}
+
+/* GALLERY */
+
+.gallery{
+padding:70px;
+
+background-size:cover;
+background-position:center;
+}
+
+.grid{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.grid img{
+width:260px;
+border-radius:20px;
+transition:0.4s;
+cursor:pointer;
+}
+
+.grid img:hover{
+transform:scale(1.1);
+}
+
+/* TIMELINE */
+
+.timeline{
+padding:70px;
+}
+
+.timeline ul{
+list-style:none;
+padding:0;
+max-width:600px;
+margin:auto;
+}
+
+.timeline li{
+background:#1e293b;
+margin:15px;
+padding:15px;
+border-radius:10px;
+font-size:20px;
+}
+
+/* LETTER */
+
+.letter{
+background:#1e293b;
+margin:60px auto;
+max-width:700px;
+padding:40px;
+border-radius:20px;
+}
+
+/* SURPRISE */
+
+.surprise{
+margin:80px 0;
+}
+
+.surprise button{
+padding:18px 40px;
+font-size:20px;
+background:#ff4d6d;
+border:none;
+border-radius:40px;
+color:white;
+cursor:pointer;
+}
+
+/* FLOATING HEARTS */
+
+.hearts span{
+position:fixed;
+bottom:-10px;
+font-size:25px;
+animation:floatHearts 8s linear infinite;
+}
+
+.hearts span:nth-child(1){left:10%}
+.hearts span:nth-child(2){left:30%}
+.hearts span:nth-child(3){left:50%}
+.hearts span:nth-child(4){left:70%}
+.hearts span:nth-child(5){left:90%}
+
+@keyframes floatHearts{
+
+0%{
+transform:translateY(0);
+opacity:1;
+}
+
+100%{
+transform:translateY(-100vh);
+opacity:0;
+}
+
+}
+
+/* MUSIC PLAYER */
+
+audio{
+position:fixed;
+bottom:20px;
+right:20px;
+}
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+/* Tablet */
+
+@media (max-width:1024px){
+
+.hero h1{
+font-size:50px;
+}
+
+.story{
+padding:50px 30px;
+font-size:18px;
+}
+
+.grid img{
+width:220px;
+}
+
+.timeline li{
+font-size:18px;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.hero{
+padding:20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:35px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.story{
+padding:30px 20px;
+font-size:16px;
+}
+
+.gallery{
+padding:40px 20px;
+}
+
+.grid{
+flex-direction:column;
+align-items:center;
+}
+
+.grid img{
+width:90%;
+}
+
+.timeline{
+padding:40px 20px;
+}
+
+.timeline li{
+font-size:16px;
+padding:12px;
+}
+
+.letter{
+margin:30px 15px;
+padding:25px;
+}
+
+.counter h1{
+font-size:30px;
+}
+
+.surprise button{
+padding:12px 25px;
+font-size:16px;
+}
+
+.password input{
+width:80%;
+}
+
+.password button{
+width:60%;
+}
+
+}
+
+/* Small Mobile */
+
+@media (max-width:480px){
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.story{
+font-size:15px;
+}
+
+.timeline li{
+font-size:14px;
+}
+
+.counter h1{
+font-size:26px;
+}
+
 }
