@@ -12,6 +12,7 @@ import Hearts from "./components/Hearts";
 import Music from "./components/Music";
 
 import "./App.css";
+import Diary from "./components/Diary";
 
 function App() {
 
@@ -40,6 +41,7 @@ return(
 <Timeline/>
 <Letter/>
 <Surprise/>
+<Diary/>
 
 </div>
 
