@@ -15,7 +15,7 @@ const interval = setInterval(()=>{
 setShow(text.slice(0,i))
 i++
 
-if(i>text.length) clearInterval(interval)
+//if(i>text.length) clearInterval(interval)
 
 },50)
 
@@ -23,7 +23,7 @@ if(i>text.length) clearInterval(interval)
 
 return(
 
-<div className="letter">
+//<div className="letter">
 
 <h2>My Love Letter</h2>
 <p>{show}</p>
