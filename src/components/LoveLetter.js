@@ -1,35 +1,19 @@
-import {useState,useEffect} from "react"
-
-export default function Letter(){
-
-const text = "No matter how far we are, my heart always belongs to you ❤️"
-
-const [show,setShow] = useState("")
-
-useEffect(()=>{
-
-let i=0
-
-const interval = setInterval(()=>{
-
-setShow(text.slice(0,i))
-i++
-
-//if(i>text.length) clearInterval(interval)
-
-},50)
-
-},[])
+export default function LoveLetter(){
 
 return(
 
-//<div className="letter">
+<div className="letter">
 
-<h2>My Love Letter</h2>
-<p>{show}</p>
+<h2>💌 My Love Letter</h2>
+
+<p>
+तुम मेरी जिंदगी की सबसे खूबसूरत कहानी हो ❤️  
+तुम्हारे बिना सब अधूरा सा लगता है 💖  
+मैं चाहता हूँ कि हम हमेशा ऐसे ही साथ रहें 🌹  
+</p>
 
 </div>
 
-)
+);
 
 }
